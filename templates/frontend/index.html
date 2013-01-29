@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfrgWSKJuOCGY3HQAibKOjdVJcFRF2BJU&sensor=false">
+    </script>
+
+    <script type="text/javascript" src="js/main.js">
+
+    </script>
+  </head>
+  <body onload="initialize({{coords}})">
+    <div id="header"></div>
+    <div id="map_canvas"></div>
+    <div id="right">
+    {% for category in categories %}
+    	<ul>
+    		<li>{{ category }}</li>
+    	</ul>
+    {% endfor %}
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>
+
