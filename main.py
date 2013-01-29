@@ -22,7 +22,7 @@ class MainHandler(webapp2.RequestHandler):
         else:
             #Do other stuff
             pass
-        categories = ["Companies", "Investment Funds", "Private Investors", "Co-working Spaces"]
+        categories = ["Digital Companies", "Creative Companies", "Investors", "Co-working/Incubator Spaces"]
         template = template_env.get_template("index.html")
         template_vars = {"categories" : categories, "coords" : [["Belfast", "54.602699", "-5.930557"],
                                                                 ["Derry", "54.995933", "-7.307968"],

@@ -20,10 +20,4 @@ function initialize(coords) {
             title: coord[0]
         });
     }
-  	/*
-  	var location = new google.maps.LatLng(lat, long);
-  	marker = new google.maps.Marker({
-        position: location,
-        map: map
-    }); */
 }

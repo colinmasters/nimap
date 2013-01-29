@@ -3,20 +3,18 @@
     <title>Add Venture Details & Location</title>
     <link type="text/css" href="/css/admin.css" rel="stylesheet" />
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="/js/jquery-ui-1.8.1.custom.min.js"></script>
     <script type="text/javascript" src="/js/admin.js"></script>
   </head>
   <body>
-    <!--
-    <form action="/admin/save_venture" enctype="multipart/form-data" method="post" name="venture">
-      <div>Name: <input type="text" align="left" width="50" name="name" value=""/></div>
-    -->
-
-
-    <label>Address: </label><input id="address"  type="text"/>
-    <div id="map_canvas" style="width:300px; height:300px"></div><br/>
-    <label>latitude: </label><input id="latitude" type="text"/><br/>
-    <label>longitude: </label><input id="longitude" type="text"/>
+    <p><input class="postcode" id="Postcode" name="Postcode" type="text"> <input type="submit" id="findbutton" value="Find" /></p>
+        
+        <div id="geomap" style="width:400px; height:400px;">
+            <p>Loading Please Wait...</p>
+        </div>
+        
+        <input id="hidLat" name="hidLat" type="hidden" value="">
+        <input id="hidLong" name="hidLong" type="hidden" value="">
   </body>
 </html>

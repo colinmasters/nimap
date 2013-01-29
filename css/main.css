@@ -1,7 +1,7 @@
 html { height: 100% }
-body { font-size: 16px; height: 100%; margin: 0; padding: 0 }
-#header {width: 100%; height:110px; background-color:#333;}
-#right {float: right; width: 20%; background-color:#d83; height: 80%}
-#footer {clear: both; background-color:#333; height:30px;}
-#map_canvas { height: 80%; float:left; width:80%;}
+body { font-size: 16px; height: 100%; margin: 0; padding: 0; background: #292b30 url("/images/background-noise.png");}
+#header {width: 100%; height:110px; margin-top: 10px;}
+#right {float: right; width: 18%; height: 80%; background-color: #e5e5e5; margin-right: 15px; moz-box-shadow: 10px 5px 5px black; -webkit-box-shadow: 10px 5px 5px black; box-shadow: 10px 5px 5px black;}
+#footer {clear: both; height:15px;}
+#map_canvas { height: 80%; float:left; width:80%; moz-box-shadow: 10px 5px 5px black; -webkit-box-shadow: 10px 5px 5px black; box-shadow: 10px 5px 5px black;}
 .ui-autocomplete { background-color: white; width: 300px; border: 1px solid #cfcfcf; list-style-type: none; padding-left: 0px;}

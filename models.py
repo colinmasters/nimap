@@ -5,9 +5,7 @@ from google.appengine.ext import db
 
 class Venture(db.Model):
     name = db.StringProperty()
-    street_address = db.StringProperty()
-    town_city = db.StringProperty()
-    postcode = db.StringProperty()
+    address = db.StringProperty()
     category = db.StringProperty()
     website = db.StringProperty()
     logo = db.BlobProperty()
@@ -34,5 +32,7 @@ class Venture(db.Model):
             resave = True
         self.put()
         if resave:
+            self.unique_id = self.key().id()
+            self.put ()f resave:
             self.unique_id = self.key().id()
             self.put ()
