@@ -1,0 +1,82 @@
+@import '../framework/config'
+
+.player-control-wrapper
+  float: left
+  position: relative
+  &.opened
+    .player-scale
+      left: 13px
+
+.player-control
+  background: image-url('player/control.png') 0 0 no-repeat
+  cursor: pointer
+  float: left
+  height: 35px
+  margin-right: 8px
+  position: relative
+  width: 35px
+  z-index: 5
+
+  &:hover
+    background-position: 0 bottom
+    .player-icon
+      background-position: center bottom
+
+// Huge player control modifier
+.player-control-huge
+  @extend .player-control
+  background-image: image-url('player/control-big.png')
+  height: 54px
+  margin-top: -10px
+  width: 54px
+
+  .player-icon
+    height: 24px
+    margin: 15px 0 0 17px
+    width: 24px
+
+// Player icon
+.player-icon
+  background-position: center 0
+  background-repeat: no-repeat
+  height: 16px
+  margin: 10px 0 0 7px
+  width: 20px
+
+  &.p-back
+    background-image: image-url('player/icon-back.png')
+
+  &.p-next
+    background-image: image-url('player/icon-next.png')
+
+  &.p-play
+    background-image: image-url('player/icon-play.png')
+
+  &.p-volume
+    background-image: image-url('player/icon-volume.png')
+
+// Player scale
+.player-scale-holder
+  overflow: hidden
+  position: absolute
+  left: 10px
+  top: 7px
+  width: 106px
+  z-index: 4
+
+.player-scale
+  background-color: #141517
+  border-radius: 20px
+  left: -75px
+  padding: 4px 4px 4px 13px
+  position: relative
+  width: 65px
+  +box-shadow(0 1px 0 rgba(#fff, .06))
+  +transition(left .2s)
+
+.player-scale-filler
+  border-radius: 20px
+  height: 12px
+  +box-shadow(inset 0 1px 0 rgba(#fff, .4))
+  +vertical-gradient(#acd05f, #6e921d)
+
