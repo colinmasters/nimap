@@ -13,15 +13,38 @@
   </head>
   <body onload="initialize({{coords}})">
     <div id="header">
-    		<div id="addbutton">
+        <div id="logo"></div>
+    		
+        <div id="addbutton">
     			<a href="/add" class="button">Add Your Company</a>
     		</div>
+
+        <div id="tweetlink">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-hashtags="NIDigitalMap">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          </script>
+        </div>
+
     	</div>
     	
     <div id="map_canvas"></div>
     
     <div id="right">
-    		<div id="right-top"></div>
+          <div id="iconwrapper">
+            <a id="link" href="/category/?category=company">
+              <img src="/images/company.png" class="icon"/>
+              <img src="/images/companylink.png" class="textlink">
+              </a>
+          </div>
+          <div id="iconwrapper">
+            <a id="link" href="/category/?category=incubator">
+              <img src="/images/incubator.png" class="icon"/>
+              <p class="textlink">Coworking Spaces</p>
+            </a>
+          </div>
+          <div id="iconwrapper">
+            <img src="/images/investor.png" class="icon"/>
+          </div>
     </div>
     
     <div id="footer"></div>
