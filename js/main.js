@@ -1,7 +1,41 @@
+var niMapStyle = [		
+  	{
+  		featureType: "road",
+  		elementType: "geometry",
+  		stylers: [
+		  { hue: "#ffffff" },
+		  { lightness: 100 }
+		]
+  		
+	},	
+	{
+  		featureType: "road",
+  		elementType: "labels",
+  		stylers: [
+			{ visibility: "on" },
+	      	{ lightness: 6 },
+	      	{ hue: "#fff700" }
+	    ]
+	},
+  	{
+  		featureType: "water",
+  		stylers: [
+  			{ hue: "#89cff0" }
+  		]
+  	},
+  	{
+		featureType: "transit.line",
+	    stylers: [
+	    	{ visibility: "off" }
+	    ]
+	} 	
+];
+
 function initialize(coords) {
     var mapOptions = { 
     	center: new google.maps.LatLng(54.6, -6.7),
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: niMapStyle
         };
     var map = new google.maps.Map(document.getElementById("map_canvas"), 
     	mapOptions);

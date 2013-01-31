@@ -5,10 +5,10 @@
     <script type="text/javascript" src="/js/main.js"></script>
 </head>
     <body>
-    <a href="/admin/approvals">Approvals</a>
-    </br>
-    <a href="/admin">Admin Home</a>
-    </br>
-    <a href="/">Home</a>
+    <ul>
+    {% for venture in ventures %}
+    	<li><a href="/admin/venture/?uniqueid={{venture.uniqueid}}">{{venture.name}}</a></li>
+    {% endfor %}
+    </ul>
     </body>
 </html>

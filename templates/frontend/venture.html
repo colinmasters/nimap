@@ -1,5 +1,6 @@
 <html>
   <head>
+  	<link rel="stylesheet" type="text/css" href="/css/main.css" />
     <title>View Venture</title>
     <link type="text/css" href="/css/admin.css" rel="stylesheet" />
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfrgWSKJuOCGY3HQAibKOjdVJcFRF2BJU&sensor=false"></script>
@@ -9,14 +10,5 @@
   </head>
   <body>
     Name: {{venture.name}}
-    {% if venture.approved == False %}
-    <form action="/admin/approved" method="post" >
-    	<input type="hidden" name="uniqueid" value="{{ venture.uniqueid }}" />
-    	<input type="submit" id="submit" value="Approve"/>
-    </form>
-    {% endif %}
-    <br/>
-    <a href="/admin">Admin</a>
-    <a href="/">Home</a>
   </body>
 </html>

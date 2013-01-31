@@ -12,15 +12,18 @@
     </script>
   </head>
   <body onload="initialize({{coords}})">
-    <div id="header"></div>
+    <div id="header">
+    		<div id="addbutton">
+    			<a href="/add" class="button">Add Your Company</a>
+    		</div>
+    	</div>
+    	
     <div id="map_canvas"></div>
+    
     <div id="right">
-    {% for category in categories %}
-    	<ul>
-    		<li>{{ category }}</li>
-    	</ul>
-    {% endfor %}
+    		<div id="right-top"></div>
     </div>
+    
     <div id="footer"></div>
   </body>
 </html>
