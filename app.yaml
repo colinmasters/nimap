@@ -1,4 +1,4 @@
-application: nidigitallandscape
+application: nidigitalmap
 version: 1
 runtime: python27
 api_version: 1
@@ -14,6 +14,7 @@ handlers:
 
 - url: /css
   static_dir: css
+
 - url: /images
   static_dir: images
 
@@ -23,7 +24,6 @@ handlers:
 
 - url: .*
   script: main.app
-  login: admin
 
 libraries:
 - name: webapp2

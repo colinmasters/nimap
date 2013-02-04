@@ -9,30 +9,39 @@
     <script type="text/javascript" src="/js/admin.js"></script>
   </head>
   <body>
-    <p>
-      <form action="/save" enctype="multipart/form-data" method="post" name="profile">
+    <div id="formwrapper">
+      <form action="/save" enctype="multipart/form-data" method="post" name="profile" onsubmit="return validateForm()">
       <div>I am a...</div>
-      <div><input type="radio" name="category" value="company"> Company</div>
-      <div><input type="radio" name="category" value="investor"> Investor</div>
-      <div><input type="radio" name="category" value="coworking"> Coworking/Incubator Space</div>
-      <div>Name: <input type="text" align="left" width="50" name="name"/></div>
-      <div>Street Address: <input type="text" align="left" width="50" name="street"/></div>
+      <select name="category">
+        <option value="company">Tech Company</option>
+        <option value="investor">Investor</option>
+        <option value="workspace">Working Space</option>
+        <option value="incubator">Incubator</option>
+        <option value="support">Business Support</option>
+        <option value="wifispot">Wifi Spot</option>
+        <option value="coderdojo">Coder Dojo</option>
+        <option value="codeclub">Code Club</option>
+      </select>
+      <div><input type="text" align="left" width="50" name="name"/>Name: </div>
+      <div>Address: <input type="text" align="left" width="50" name="street"/></div>
+      <div><input type="text" align="left" width="50" name="street2"/></div>
       <div>Town/City: <input type="text" align="left" width="50" name="city"/></div>
       <div>County: <input type="text" align="left" width="50" name="county"/></div>
       <div>Postcode: <input class="postcode" id="Postcode" name="postcode" type="text"> <input type="submit" id="findbutton" value="Find" /></div>
       <div>Is the pin correct? Drag to reposition if not...</div>
-    </p>  
+      <div>Website: <input type="text" align="left" width="50" name="website"/></div>
+      <div>Email: <input type="text" align="left" width="50" name="email" /></div>
+      <div>Phone:   <input type="text" align="left" width="50" name="phone"/></div>
+      <div><input type="radio" name="terms" id="terms" value="true"> I agree to the <a href="/termsandconditions">terms and conditions</a> of the NI Digital Map</div>
+      <div><input type="submit" id="submit" value="Submit"></div>
+    </div>
       <div id="geomap" style="width:250px; height:250px;">
         <p>Loading Please Wait...</p>
       </div>  
       <input id="hidLat" name="latitude" type="hidden" value="">
       <input id="hidLong" name="longitude" type="hidden" value="">
       <div>
-      <div>Website: <input type="text" align="left" width="50" name="website"/></div>
-      <div>Email: <input type="text" align="left" width="50" name="email" /></div>
-      <div>Phone:   <input type="text" align="left" width="50" name="phone"/></div>
-      <!--<div><input type="radio" name="terms" value="true"> I agree to the terms and conditions of NI Digital Landscape</div>-->
-      <div><input type="submit" id="submit" value="Submit"></div>
+
     </form>
   </body>
 </html>

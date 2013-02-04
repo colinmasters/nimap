@@ -3,13 +3,16 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/addcompany.css" />
+    <link rel="stylesheet" type="text/css" href="/css/admin.css" />
+
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfrgWSKJuOCGY3HQAibKOjdVJcFRF2BJU&sensor=false">
     </script>
 
-    <script type="text/javascript" src="/js/main.js">
-
-    </script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.8.1.custom.min.js"></script>
   </head>
   <body onload="initialize({{coords}})">
       <div id="header">
@@ -19,9 +22,9 @@
       </div>
     	
       <div id="navbar">
-        <div id="addbutton">
-    			<a href="/add" class="button">Add Your Company</a>
-    		</div>
+        <a href="#" class="aboutbutton">About This Map</a>
+    		<a href="#" class="addbutton">Add Your Company</a>
+          
 
         <div id="tweetlink">
           <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="NIDigitalMap">Tweet</a>
@@ -54,6 +57,21 @@
       <div id="map_canvas"></div>
 
       <div id="footer"></div>
+
+      <div id="addcompany-content">
+          <iframe height="360" width="600" seamless="seamless" scrolling="no" src="/add">
+          </iframe>
+      </div>
+
+      <div id="aboutmap-content">
+        <p>about_this_map::content</p>
+      </div>
+
+      <!-- Modal Popup Contents Below Here -->
+     
+  <script type='text/javascript' src='/js/jquery.js'></script>
+  <script type='text/javascript' src='/js/jquery.simplemodal.js'></script>
+  <script type='text/javascript' src='/js/modalcontroller.js'></script>
 
   </body>
 </html>

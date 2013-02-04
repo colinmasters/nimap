@@ -16,7 +16,6 @@ template_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
         template = template_env.get_template("index.html")
         ventures = Venture.all()
         coords = []

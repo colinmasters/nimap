@@ -1,3 +1,38 @@
+function validateForm() {
+    var formname = "profile";
+    var name=document.forms[formname]["name"].value;
+    var street=document.forms[formname]["street"].value;
+    var city=document.forms[formname]["city"].value;
+    var county=document.forms[formname]["county"].value;
+    var postcode=document.forms[formname]["postcode"].value;
+    var properties = [name, street, city, county, postcode];
+
+    for (i=0; i < properties.length; i++) {
+        if (properties[i] == null || properties[i]=="") {
+            alert("All fields must be filled out");
+            return false;
+        }
+    }
+
+    var longitude = document.forms[formname]["hidLong"].value;
+    var latitude = document.forms[formname]["hidLat"].value;
+
+    if (longitude==null || longitude=="" || latitude==null || latitude==""){
+        alert("Please hit find so I can Geomap your address!");
+        return false;
+    }
+
+
+    if (document.getElementById("terms").checked) {
+        return true;
+    }
+    else {
+        alert("Please read and accept the terms and conditions");
+        return false;
+    }
+    return true;
+}
+
 var PostCodeid = "#Postcode";
         var longval = "#hidLong";
         var latval = "#hidLat";
@@ -10,8 +45,8 @@ var PostCodeid = "#Postcode";
             var initialLat = $(latval).val();
             var initialLong = $(longval).val();
             if (initialLat == '') {
-                initialLat = "51.773071843208115";
-                initialLong = "-1.6568558468750325";
+                initialLat = "54.867124";
+                initialLong = "-6.503906";
             }
             var latlng = new google.maps.LatLng(initialLat, initialLong);
             var options = {

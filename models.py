@@ -6,6 +6,7 @@ from google.appengine.ext import db
 class Venture(db.Model):
     name = db.StringProperty()
     street = db.StringProperty()
+    street2 = db.StringProperty()
     city = db.StringProperty()
     county = db.StringProperty()
     postcode = db.StringProperty()
