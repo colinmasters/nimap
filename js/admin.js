@@ -22,7 +22,6 @@ function validateForm() {
         return false;
     }
 
-
     if (document.getElementById("terms").checked) {
         return true;
     }
@@ -75,7 +74,7 @@ var PostCodeid = "#Postcode";
         $(document).ready(function () {
         
             initialize();
-        
+            /*
             $(function () {
                 $(PostCodeid).autocomplete({
                     //This bit uses the geocoder to fetch address values
@@ -90,7 +89,7 @@ var PostCodeid = "#Postcode";
                         });
                     }
                 });
-            });
+            });*/
         
             $('#findbutton').click(function (e) {
                 var address = $(PostCodeid).val();

@@ -14,20 +14,24 @@ from models import Venture
 template_dir = os.path.dirname("templates/frontend/")
 template_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir))
 
+def get_coords(ventures):
+    coords = []
+    for venture in ventures:
+        if venture.approved:
+            coord = []
+            coord = []
+            coord.append(str(venture.name))
+            coord.append(str(venture.latitude))
+            coord.append(str(venture.longitude))
+            coords.append(coord)
+    return coords
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         template = template_env.get_template("index.html")
         ventures = Venture.all()
-        coords = []
-        for venture in ventures:
-            if venture.approved:
-                coord = []
-                coord.append(str(venture.name))
-                coord.append(str(venture.latitude))
-                coord.append(str(venture.longitude))
-                coords.append(coord)
+        coords = get_coords(ventures)
         template_vars = {"coords" : coords}
-        print template_vars
         self.response.out.write(template.render(template_vars))
 
 class AddVenture(webapp2.RequestHandler):
@@ -50,6 +54,15 @@ class SaveVenture(webapp2.RequestHandler):
         venture.save()
         self.redirect("/venture/?uniqueid=%d" % venture.uniqueid)
 
+class FilterCategory(webapp2.RequestHandler):
+    def get(self):
+        template = template_env.get_template("index.html")
+        category = self.request.get("category")
+        ventures = Venture.get_many("category", category)
+        coords = get_coords(ventures)
+        template_vars = {"coords" : coords}
+        self.response.out.write(template.render(template_vars))
+
 class ViewVenture(webapp2.RequestHandler):
     def get(self):
         uniqueid = int(self.request.get("uniqueid"))
@@ -71,6 +84,7 @@ class ViewVenture(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/add', AddVenture),
                                ('/save', SaveVenture),
+                               ('/category/?', FilterCategory),
                                ('/venture/?', ViewVenture),
                                ], debug=True)
 
