@@ -1,0 +1,23 @@
+<style type="text/css">
+	/* standard issue menu styles */
+	ul { margin:0px; padding:0px; background-color:#E5E5E5 } 
+	ul li a{ border-bottom: 2px solid #CCCCCC; color: #0D0B16; height: 48px; display:block; 
+
+text-decoration:none;}
+	ul li a span { margin-left:50px; height: 48px; display:block; padding-top:10px; color: black; 
+
+font: 18px/1.231 Arial,sans-serif;  }
+	ul li a:hover{ background-color:#333333;  }
+	ul li a:hover span{ color: #ffffff; cursor:pointer; }
+
+	/*then do a style for each background image. background-size not 100% IE supported */
+	/* so just sort out your pngs */
+
+	ul li a.tech{ background-image:url('http://nidigitalmap.appspot.com/images/investor.png'); 
+
+background-repeat:no-repeat; background-position:0px; background-size:48px }
+</style>
+
+<ul>
+	<li><a  class="tech" href=""><span>Tech Companies</span></a></li>
+</ul>

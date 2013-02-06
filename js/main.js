@@ -48,10 +48,33 @@ function initialize(coords) {
   	
   	for (var i = 0; i < coords.length; i++) {
         var coord = coords [i]
+
+        var infoContent = 
+            '<div id="infocontent" class="infocontent">'+
+            '<h1>' + coord[2] + '</h1>'+
+            '<p>'+ coord[3] +'</p>'+
+            '<p>'+ coord[4] +'</p>'+
+            '<p>'+ coord[5] +'</p>'+
+            '<p>'+ coord[6] +'</p>'+
+            '<p><a href="http://'+ coord[7] +'">'+ coord[7] +'</a></p>'+
+            '<p>'+ coord[8] +'</p>'+
+            '<p>'+ coord[9] +'</p>'+
+            '</div>'+
+            '<img src="http://images.electricpig.co.uk/wp-content/uploads/2011/01/map-icon.png" class="markerlogo"/>'
+            '</div>';
+
+        var infoWindow = new google.maps.InfoWindow({
+          content : infoContent
+        });
+
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng (coord[1], coord[2]),
+            position: new google.maps.LatLng (coord[0], coord[1]),
             map: map,
             title: coord[0]
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infoWindow.open(map, marker);
         });
     }
 }

@@ -19,10 +19,12 @@ def get_coords(ventures):
     for venture in ventures:
         if venture.approved:
             coord = []
-            coord = []
-            coord.append(str(venture.name))
-            coord.append(str(venture.latitude))
-            coord.append(str(venture.longitude))
+            fields = ["latitude", "longitude", "name", "street", "street2",
+                      "city", "county", "postcode", "website", "email", "phone"]
+            for field in fields:
+                value = getattr(venture, field)
+                if value != None:
+                    coord.append(str(value))
             coords.append(coord)
     return coords
 

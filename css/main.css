@@ -15,7 +15,7 @@ body {
 	height: 100%; 
 	margin: 0; 
 	padding: 0; 
-	background: #2D2925 url("/images/background-noise.png");
+	background: #292b30 url("/images/background-noise.png");
 	color: white;'
 }
 
@@ -99,6 +99,17 @@ body {
 	border: 2px solid #1a6884;
 	margin-right: 250px;
 	margin-top: 5px;
+	color: black;
+}
+
+#map_canvas .markerlogo {
+	float: right;
+	padding-left: 10px;
+}
+
+#map_canvas .infocontent {
+	float: left;
+	padding-top: 6px;
 }
 
 #footer {
@@ -107,7 +118,7 @@ body {
 }
 
 #iconwrapper {
-	height: 48px;
+	height: 50px;
 	width: 100%;
 	border-bottom: 2px solid #ccc;
 	color: #0d0b16;
@@ -118,8 +129,8 @@ body {
 
 .icon {
 	float: left;
-	height: 36px;
-	width: 36px;
+	height: 48px;
+	width: 48px;
 	vertical-align: middle;
 	border: 0;
 }

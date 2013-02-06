@@ -75,7 +75,6 @@
           <span>Phone:</span>
           <input type="text" align="left" width="50" name="phone" class="input_text"/>
         <label>
-
         <!--
         <label>
           I agree to the <a href="/termsandconditions">terms and conditions</a> of the NI Digital Map
@@ -86,6 +85,8 @@
           <input type="submit" id="submit" value="Submit" class="submitbutton" onclick="return validateForm()"/>
         </label>
       </div>
+          <input id="hidLat" name="latitude" type="hidden" value="">
+          <input id="hidLong" name="longitude" type="hidden" value="">
     </form>
   </div>
     <!-- Map Code -->
@@ -95,8 +96,6 @@
         <p>Loading Please Wait...</p>
       </div> 
       <div id="dragtext">Drag pin to reposition...</br></div>
-        <input id="hidLat" name="latitude" type="hidden" value="">
-        <input id="hidLong" name="longitude" type="hidden" value="">
     </div>
 
     </form>
