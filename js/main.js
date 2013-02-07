@@ -60,7 +60,9 @@ function initialize(coords) {
             '<p>'+ coord[8] +'</p>'+
             '<p>'+ coord[9] +'</p>'+
             '</div>'+
-            '<img src="http://images.electricpig.co.uk/wp-content/uploads/2011/01/map-icon.png" class="markerlogo"/>'
+            '<div id="logocontainer" class="logocontainer">' +
+            '<img src="/logo/?uniqueid='+ coord[10] +'" class="markerlogo"/>'
+            '</div>' +
             '</div>';
 
         var infoWindow = new google.maps.InfoWindow({
