@@ -56,6 +56,7 @@ class MainHandler(webapp2.RequestHandler):
             self.response.out.write(template.render(template_vars))
             return
 
+        logging.info('CACHE MISS: %s' % cache_key)
         # cache miss so get from datastore
         ventures = Venture.all()
         coords = get_coords(ventures)
@@ -116,6 +117,7 @@ class FilterCategory(webapp2.RequestHandler):
             return
 
         # cache miss so get from datastore
+        logging.info('CACHE MISS: %s' % cache_key)
         ventures = Venture.get_many("category", category)
         coords = get_coords(ventures)
         template_vars = {"coords": coords}
@@ -136,6 +138,7 @@ class ViewVenture(webapp2.RequestHandler):
         venture = memcache.get(cache_key)
         # return result from cache if found
         if venture is None:
+            logging.info('CACHE MISS: %s' % cache_key)
             # cache miss so get from datastore
             venture = Venture.get_one("uniqueid", uniqueid)
 
@@ -170,6 +173,7 @@ class ServeLogo(webapp2.RequestHandler):
             self.response.out.write(image)
             return
 
+        logging.info('CACHE MISS: %s' % cache_key)
         venture = Venture.get_one("uniqueid", uniqueid)
         image = venture.logo
         if venture.logo:
