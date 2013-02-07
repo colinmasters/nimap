@@ -79,7 +79,7 @@ class SaveVenture(webapp2.RequestHandler):
     def post(self):
         venture_vals = {}
         venture = Venture()
-        venture_keys = ["name", "street", "city", "county",
+        venture_keys = ["name", "street", "street2", "city", "county",
                         "postcode", "latitude", "longitude",
                         "category", "website", "email", "phone"]
         for item in venture_keys:
