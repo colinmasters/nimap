@@ -108,7 +108,7 @@ class ServeLogo(webapp2.RequestHandler):
         venture = Venture.get_one("uniqueid", uniqueid)
         image = venture.logo
         if venture.logo:
-          image = images.resize(image, 128, 128)
+          image = images.resize(image, 96, 96)
           self.response.headers['Content-Type'] = 'image/png'
           self.response.out.write(image)            
 

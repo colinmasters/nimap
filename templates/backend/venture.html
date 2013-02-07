@@ -9,6 +9,16 @@
   </head>
   <body>
     Name: {{venture.name}}
+    No/ Building: {{venture.street}}
+    Town/City: {{venture.city}}
+    County: {{venture.county}}
+    Postcode: {{venture.postcode}}
+    Website: {{venture.website}}
+    Email: {{venture.email}}
+    Phone: {{venture.phone}}
+    Logo: <img src="/logo/?uniqueid={{venture.uniqueid}}" />
+    Approved: {{venture.approved}}
+    uniqueid: {{venture.uniqueid}}
     {% if venture.approved == False %}
     <form action="/admin/approved" method="post" >
     	<input type="hidden" name="uniqueid" value="{{ venture.uniqueid }}" />
@@ -17,6 +27,7 @@
     {% endif %}
     <br/>
     <a href="/admin">Admin</a>
+    <br/>
     <a href="/">Home</a>
   </body>
 </html>
