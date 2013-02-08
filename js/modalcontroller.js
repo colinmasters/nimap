@@ -13,7 +13,13 @@ jQuery(function ($) {
 
 	// Load dialog on click
 	$('#navbar .aboutbutton').click(function (e) {
-		$('#aboutmap-content').modal();
+		$('#aboutmap-content').modal({
+    		autoPosition: true,
+    		containerCss: {
+        		'height' : '410px'
+    		},
+    		position: ['20%', '25%']
+		});
 
 		return false;
 	});

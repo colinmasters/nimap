@@ -292,7 +292,14 @@ iframe {
 
 #aboutmap-content {
 	color: black;
+	text-align: justify;
+	height: auto;
 }
+
+#aboutmap-content a:link {color:black;}    /* unvisited link */
+#aboutmap-content a:visited {color:black;} /* visited link */
+#aboutmap-content a:hover {color:#ccc;}   /* mouse over link */
+#aboutmap-content a:active {color:black;}  /* selected link */
 
 .popup{ position:relative; width:500px; height:70px; list-style:none; cursor:pointer;}
 .popup li div{ position:absolute; z-index:10; visibility:hidden; width:853px; height:480px; left:-200px;}
