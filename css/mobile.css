@@ -1,0 +1,283 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-size: 1em; 
+}
+
+html { 
+	height: 100% ;
+	font: 12px/1.231 Arial, sans-serif;
+}
+
+body { 
+	font-size: 12px; 
+	height: 100%; 
+	margin: 0; 
+	padding: 0; 
+	background: #292b30 url("/images/background-noise.png");
+	color: white;'
+}
+
+#popup-body {
+	background-color: #e5e5e5;
+	color: black;
+}
+
+#logo {
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	margin-left: auto;
+	position: absolute;
+}
+
+#header {
+	width: 100%;
+	height: 20%;
+}
+
+#navbar {
+	padding-top: 5px;
+	width: 100%;
+	height: 25px;
+	padding-bottom: 5px;
+}
+
+.aboutbutton, .addbutton {
+	margin-left: auto;
+	margin-right: auto;
+	text-decoration: none;
+	padding: 5px 10px;
+	display: inline;
+	background: #1a6884 url('/images/button.png') repeat-x bottom;
+	display: block;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-shadow: 1px 1px #666;
+}
+
+#tweetlink {
+	margin-top: 2px;
+	float: right;
+	width: 93px;
+}
+
+#link {
+	clear: both;
+}
+
+#map_canvas { 
+	height: 80%;
+	width:100%;
+}
+
+
+#map_canvas .infocontent {
+	float: left;
+	padding-top: 6px;
+	color: black;
+}
+
+#map_canvas .markerlogo {
+	padding-left: 10px;
+}
+
+#map_canvas .logocontainer {
+	float: right;
+	width: 138px;
+}
+
+#footer {
+	clear: both; 
+	height:15%;
+}
+
+#iconwrapper {
+	height: 50px;
+	width: 100%;
+	border-bottom: 2px solid #ccc;
+	color: #0d0b16;
+}
+#iconwrapper:hover{
+	background-color: #ccc;
+}
+
+.icon {
+	float: left;
+	height: 48px;
+	width: 48px;
+	vertical-align: middle;
+	border: 0;
+}
+
+.textlink {
+	text-decoration: none;
+	font: 18px/1.231 Arial, sans-serif;	
+	float: left;
+	margin-left: 5px;
+	height: 16px;
+	margin-top: 20px;
+	margin-bottom: auto;
+	color: black;
+}
+
+.button, .findbutton, .submitbutton .file_upload {
+	vertical-align: middle;
+	margin-right: 10px;
+	text-decoration: none;
+	padding: 5px 10px;
+	display: inline;
+	background: #1a6884 url('/images/button.png') repeat-x bottom;
+	display: block;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-shadow: 1px 1px #666;
+}
+
+.buttonsmall {
+	vertical-align: middle;
+	margin-right: 10px;
+	text-decoration: none;
+	padding: 5px 10px;
+	display: inline;
+	background: #1a6884 url('/images/button.png') repeat-x bottom;
+	display: block;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-shadow: 1px 1px #666;
+}
+
+/* Add Company Map */
+
+#dragtext {
+	float: left;
+	margin-left: 80px;
+}
+
+#geomap {
+	height: 260px;
+	width: 260px;
+	float: right;
+	margin-right: 15px;
+	margin-top: 15px;
+	border: 2px solid #1a6884;
+}
+
+
+
+/* Form */
+
+.box {
+	float: left;
+	margin: 0 auto;
+	width: 310px;
+	position: relative;
+	font-size: 13px;
+}
+
+.box label {
+	width: 100%;
+	display: block;
+	padding: 5px 0 5px 0;
+}
+
+.box label span {
+	display: block;
+	float: left;
+	width: 100px;
+	text-align: right;
+	padding: 5px 10px 0 0;
+}
+
+.box .input_text {
+	width: 200px;
+	background: #e5e5e5;
+	border: 0;
+	border-bottom: 1px dashed #1a6884;
+	overflow: hidden;
+}
+
+.box .file_upload {
+	width: 200px;
+	background: #e5e5e5;
+	border: 0;
+	overflow: hidden;
+}
+
+.box #Postcode {
+	background-color: #e5e5e5;
+	border: 0;
+	border-bottom: 1px dashed #1a6884;
+	overflow: hidden;
+	width: 145px;
+}
+
+.box .findbutton {
+	float: right;
+	font-size: 10px;
+}
+
+.box .submitbutton {
+	float: right;
+	margin-right: 75px;
+	margin-top: 10px;
+}
+
+.box .logoadvice {
+	float: right;
+	width: 200px;
+	background: #e5e5e5;
+	border: 0;
+	font-size: 10px;
+	overflow: hidden;
+	margin-top: 2px;
+}
+
+iframe {
+	overflow: hidden;
+	border: 0;
+}
+
+.ui-autocomplete { 
+	background-color: white; 
+	width: 300px; 
+	border: 1px solid #cfcfcf; 
+	list-style-type: none; 
+	padding-left: 0px;
+}
+
+#confirmation-text {
+	text-align: center;
+}
+
+#aboutmap-content {
+	color: black;
+	text-align: justify;
+	height: auto;
+}
+
+#aboutmap-content a:link {color:black;}    /* unvisited link */
+#aboutmap-content a:visited {color:black;} /* visited link */
+#aboutmap-content a:hover {color:#ccc;}   /* mouse over link */
+#aboutmap-content a:active {color:black;}  /* selected link */
+
+.popup{ position:relative; width:500px; height:70px; list-style:none; cursor:pointer;}
+.popup li div{ position:absolute; z-index:10; visibility:hidden; width:853px; height:480px; left:-200px;}
+.popup li:hover div{visibility:visible;}

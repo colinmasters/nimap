@@ -41,10 +41,25 @@ def get_coords(ventures):
             coords.append(coord)
     return coords
 
+def is_mobile(uastring):
+
+    mobile_devices = ["Android", "BlackBerry", "iPhone", "iPad", "iPod",
+                      "Opera Mini", "IEMobile", "Windows Phone"]
+
+    for device in mobile_devices:
+        if device in uastring:
+            return True
+
+    return False 
+
 
 class MainHandler(webapp2.RequestHandler):
 
     def get(self):
+
+        uastring = self.request.headers.get("user_agent")
+        if is_mobile(uastring):
+            self.redirect("/mobile")
 
         template = template_env.get_template("index.html")
 
@@ -158,6 +173,29 @@ class ViewVenture(webapp2.RequestHandler):
         self.response.out.write(template.render(template_vars))
 
 
+class MobileVersion(webapp2.RequestHandler):
+    def get(self):
+        template = template_env.get_template("mobile.html")
+
+        # check if we have a cached result
+        cache_key = 'ventures_all'
+        template_vars = memcache.get(cache_key)
+        # return result from cache if found
+        if template_vars is not None:
+            self.response.out.write(template.render(template_vars))
+            return
+
+        logging.info('CACHE MISS: %s' % cache_key)
+        # cache miss so get from datastore
+        ventures = Venture.all()
+        coords = get_coords(ventures)
+        template_vars = {"coords": coords}
+        # add template_vars to cache so subsequent checks are quicker
+        memcache.set(cache_key, template_vars)
+
+        self.response.out.write(template.render(template_vars))
+
+
 class ServeLogo(webapp2.RequestHandler):
 
     def get(self):
@@ -192,4 +230,5 @@ app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/category/?', FilterCategory),
                                ('/venture/?', ViewVenture),
                                ('/logo/?', ServeLogo),
+                               ('/mobile', MobileVersion)
                                ], debug=True)
