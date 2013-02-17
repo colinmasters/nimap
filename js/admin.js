@@ -51,7 +51,7 @@ var PostCodeid = "#Postcode";
             var options = {
                 zoom: 16,
                 center: latlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                mapTypeId: google.maps.MapTypeId.SATTELITE
             };
         
             map = new google.maps.Map(document.getElementById("geomap"), options);

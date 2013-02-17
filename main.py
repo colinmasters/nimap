@@ -108,6 +108,9 @@ class SaveVenture(webapp2.RequestHandler):
         except:
             pass
 
+        if "http://" in venture.website:
+            venture.website = venture.website.replace("http://", "")
+
         venture.approved = False
         venture.save()
 
