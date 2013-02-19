@@ -1,5 +1,7 @@
 #addcompany-content {display:none;}
 #aboutmap-content {display:none;}
+#terms-content {display:none;}
+#privacy-content {display:none;}
 
 /* Overlay */
 #simplemodal-overlay {background-color:#000;}

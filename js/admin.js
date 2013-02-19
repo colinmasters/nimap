@@ -49,9 +49,9 @@ var PostCodeid = "#Postcode";
             }
             var latlng = new google.maps.LatLng(initialLat, initialLong);
             var options = {
-                zoom: 16,
+                zoom: 15,
                 center: latlng,
-                mapTypeId: google.maps.MapTypeId.SATTELITE
+                mapTypeId: google.maps.MapTypeId.SATELLITE
             };
         
             map = new google.maps.Map(document.getElementById("geomap"), options);

@@ -1,0 +1,7 @@
+Email System (to admin pre approval, to client post approval)
+Live Tweets?
+Counters?  Turnover/Number of Employees
+Alter between map/directory view
+Frontend Company View
+Backend Overhaul (Terrible Backend Management)
+

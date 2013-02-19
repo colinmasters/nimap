@@ -117,7 +117,9 @@ class SaveVenture(webapp2.RequestHandler):
         # flush on successful save to force cache rebuild
         memcache.flush_all()
 
-        self.redirect("/venture/?uniqueid=%d" % venture.uniqueid)
+        template = template_env.get_template("unapproved.html")
+
+        self.response.out.write(template.render())
 
 
 class FilterCategory(webapp2.RequestHandler):

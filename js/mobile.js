@@ -61,8 +61,9 @@ var niMapStyle = [
 ];
 
 function initialize(coords) {
-    var mapOptions = { 
-    	center: new google.maps.LatLng(54.6, -6.7),
+    var mapOptions = {
+        zoom: 9, 
+    	  center: new google.maps.LatLng(54.6, -6.7),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         styles: niMapStyle
         };

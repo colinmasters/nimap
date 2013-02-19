@@ -21,18 +21,12 @@
         </div>
       </div>
     	
+      <!--
       <div id="navbar">
-        <a href="#" class="aboutbutton">About This Map</a>
-    		<a href="#" class="addbutton">Add Your Company</a>
-          
-
-        <div id="tweetlink">
-          <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="MadeInNI">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-          </script>
-        </div>
+        
       </div>
-  
+      -->
+
       <div id="right">
         <div id="iconwrapper">
           <a id="link" href="/">
@@ -99,7 +93,29 @@
 
       <div id="map_canvas"></div>
 
-      <div id="footer"></div>
+      <div id="footer">
+        <div id="followlink">
+          <a href="https://twitter.com/NIDigitalMap" class="twitter-follow-button" data-show-count="false">Follow @NIDigitalMap</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        <div id="tweetlink">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="MadeInNI">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          </script>
+        </div>
+        <div id="linkedinlink">
+          <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+          <script type="IN/Share" data-url="http://www.nidigitalmap.com" data-counter="right"></script>
+        </div>
+        <div id="textlink">
+          <a class="privacy" href="#">Privacy Policy</a>
+          <a class="terms" href="#">Terms of Use</a>
+          <a href="#" class="aboutbutton">About This Map</a>
+          <a href="#" class="addbutton">Add Your Company</a>
+        </div>
+      </div>
+
+      <!-- Modal Popup Contents Below Here -->
 
       <div id="addcompany-content">
           <iframe height="360" width="600" seamless scrolling="no" src="/add">
@@ -124,9 +140,17 @@
             <li><b>Coder Dojo & Code Club:</b> The future of Nothern Ireland!</li>
         </ul>
         </p>
-  </div>
+      </div>
 
-      <!-- Modal Popup Contents Below Here -->
+      <div id="terms-content">
+        <h1>Terms of Use</h1><br/>
+        <p>Copyright NIDigitalMap.com | All right reserved.</p>
+      </div>
+
+      <div id="privacy-content">
+        <h1>Privacy Policy</h1><br/>
+        <p>All information is private</p>
+      </div>
      
   <script type='text/javascript' src='/js/jquery.js'></script>
   <script type='text/javascript' src='/js/jquery.simplemodal.js'></script>

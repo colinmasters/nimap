@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en" manifest="template.manifest.aspx">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="apple-touch-icon-precomposed" href="/map/mobile/images/campusmap-iphone-icon.png" /><link rel="apple-touch-startup-image" href="http://search.missouristate.edu/map/mobile/images/startup.png" /><meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" /><link rel="Stylesheet" media="all" type="text/css" href="/map/mobile/examples/template.css" />
+<title>Mobile Map Template - Google Maps Javascript API v3</title>
+<script type="text/javascript">
+//Delay Loading of the Map API until the DOM structure has rendered (but not necessarily all of the images).
+function logEvent(e) {
+    console.log( message = 'online: ' + navigator.onLine + ', event: ' + e.type + ', status: ' + window.applicationCache.status);
+}
+var cache = window.applicationCache;
+cache.addEventListener('cached', logEvent, false);
+cache.addEventListener('checking', logEvent, false);
+cache.addEventListener('downloading', logEvent, false);
+cache.addEventListener('error', logEvent, false);
+cache.addEventListener('noupdate', logEvent, false);
+cache.addEventListener('obsolete', logEvent, false);
+cache.addEventListener('progress', logEvent, false);
+cache.addEventListener('updateready', logEvent, false);
+document.addEventListener('DOMContentLoaded', function () {
+        var element = document.createElement('script');
+        element.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDfrgWSKJuOCGY3HQAibKOjdVJcFRF2BJU&sensor=true&callback=Initialize';
+        element.type = 'text/javascript';
+        var scripts = document.getElementsByTagName('script')[0];
+        scripts.parentNode.insertBefore(element, scripts);
+    }, false);
+var map;
+function Initialize() {
+    var MapOptions = {
+        zoom: 15,
+        center: new google.maps.LatLng(37.20084, -93.28121),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        sensor: true
+    };
+    map = new google.maps.Map(document.getElementById("map_canvas"), MapOptions);
+
+    //Delay customizations until the map has loaded
+    var element = document.createElement('script');
+    element.src = 'template.js';
+    element.type = 'text/javascript';
+    var scripts = document.getElementsByTagName('script')[0];
+    scripts.parentNode.insertBefore(element, scripts);
+}
+
+//Use the async tracking for Google Analytics
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+_gaq.push(['_trackPageview']);
+(function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = 'http://www.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script></head><body>
+<header><h1>Header</h1></header><div id="LoadingDiv"><p><img src="stream.aspx?i=loading" style="width: 32px; height: 32px;" alt="Loading" /></p></div>
+<div id="map_canvas"></div>
+<footer><span style="padding-left: 7px; font-family: Arial, Helvetica, Sans-Serif; font-size: 80%; line-height: 120%;">Mobile map template may be used freely.</span></footer></body></html>
