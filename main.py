@@ -2,6 +2,7 @@
 
 import os
 import cgi
+import time
 import jinja2
 import logging
 import webapp2
@@ -116,10 +117,12 @@ class SaveVenture(webapp2.RequestHandler):
 
         # flush on successful save to force cache rebuild
         memcache.flush_all()
+        template_vars = {"venture" : venture}
 
         template = template_env.get_template("unapproved.html")
+        time.sleep(3) #Errors switching from add to unapproved, adding delay to try and fix.
 
-        self.response.out.write(template.render())
+        self.response.out.write(template.render(template_vars))
 
 
 class FilterCategory(webapp2.RequestHandler):
