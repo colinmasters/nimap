@@ -10,6 +10,8 @@ import webapp2
 from google.appengine.ext import db
 from google.appengine.api import images
 from google.appengine.api import memcache
+from google.appengine.api import mail
+
 from models import Venture
 
 template_dir = os.path.dirname("templates/frontend/")
@@ -21,18 +23,8 @@ def get_coords(ventures):
     for venture in ventures:
         if venture.approved:
             coord = []
-            fields = ["latitude",  # 0
-                      "longitude",  # 1
-                      "name",  # 2
-                      "street",  # 3
-                      "street2",  # 4
-                      "city",  # 5
-                      "county",  # 6
-                      "website",  # 7
-                      "email",  # 8
-                      "phone",  # 9
-                      "uniqueid"  # 10
-                      ]
+            fields = ["latitude", "longitude", "name", "street", "street2", 
+                      "city", "county", "website", "email", "phone", "uniqueid"]
             for field in fields:
                 value = getattr(venture, field)
                 if value != None:
@@ -51,8 +43,30 @@ def is_mobile(uastring):
         if device in uastring:
             return True
 
-    return False 
+    return False
 
+def send_addition_email(venture):
+    message = mail.EmailMessage()
+
+    message.sender = "NI Digital Map <hello@nidigitalmap.com>"
+    message.to = venture.email
+    message.subject = "Your request has been received."
+    message.body = '''
+    Dear %s
+
+    Your request to be added to the NI Digital Map has been received.  We are now verifying
+    the information you provided and will add you to the map shortly.
+
+    Please follow us on Twitter @NIDigitalMap and share the map with other business users and
+    thank you for using NI Digital Map.
+
+    Many thanks
+    NI Digital Map
+
+    ''' % venture.name
+
+    message.send()
+    return
 
 class MainHandler(webapp2.RequestHandler):
 
@@ -114,6 +128,8 @@ class SaveVenture(webapp2.RequestHandler):
 
         venture.approved = False
         venture.save()
+
+        send_addition_email(venture)
 
         # flush on successful save to force cache rebuild
         memcache.flush_all()
