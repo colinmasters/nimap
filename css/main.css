@@ -89,7 +89,7 @@ body {
 }
 
 #map_canvas {
-	margin-left: 10px;
+	margin: 5px 250px 0 10px;
 	height: 82%; 
 	background-color: #e5e5e5; 
 	moz-box-shadow: 10px 5px 5px black; 
@@ -97,9 +97,27 @@ body {
 	box-shadow: 10px 5px 5px black;
 	padding-right: 20px;
 	border: 2px solid #1a6884;
-	margin-right: 250px;
-	margin-top: 5px;
 	color: black;
+}
+
+@media screen and (max-width: 639px) {
+	#map_canvas {
+		width: 94%;
+		height: 60%;
+		padding: 0;
+		margin: 0 10px;
+		position: absolute;
+		top: 100px;
+	}
+	#right {
+		width: 94%;
+		position: relative;
+		top: 65%;
+		clear: both;
+		display: block;
+		margin: 0 10px;
+	}
+
 }
 
 
